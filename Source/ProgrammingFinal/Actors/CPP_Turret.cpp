@@ -7,19 +7,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Actor.h"
 #include "Engine/Engine.h"
+#include "LogClass/ESS_LOG.h"
 
-/**
- * LogCPP_ESS
- *
- * Defines a static log category for this C++ class.
- *
- * - Log: Default verbosity level for standard messages.
- * - All: Enables logging of all types (Log, Warning, Error, etc.).
- *
- * This category is used with UE_LOG macros for debugging and tracking events
- * specific to this actor or module.
- */
-DEFINE_LOG_CATEGORY_STATIC(LogCPP_ESS, Log, All);
 
 
 ACPP_Turret::ACPP_Turret()

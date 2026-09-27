@@ -17,6 +17,7 @@
 #include "Logging/LogMacros.h"
 #include "DrawDebugHelpers.h"
 #include "CPP_Interact_BPI.h"
+#include "LogClass/ESS_LOG.h"
 
 
 /**
@@ -95,9 +96,9 @@ void ACPP_2D_PlayerController::Move(const FInputActionValue& Value) {
 		UPaperFlipbookComponent* Sprite = this->CurrentCharacter->FindComponentByClass<UPaperFlipbookComponent>();
 		if (Sprite) {
 			// Flip scale on X axis.
-			FVector CurrentScale = Sprite->GetComponentScale();
-			CurrentScale.X = (MoveValue > 0.0f) ? 1.0f : -1.0f;
-			Sprite->SetWorldScale3D(CurrentScale);
+			FRotator CurrentRotation = Sprite->GetRelativeRotation();
+			CurrentRotation.Yaw = (MoveValue > 0.0f) ? 0.0f : 180.0f;
+			Sprite->SetRelativeRotation(CurrentRotation);
 		}
 	}
 }
